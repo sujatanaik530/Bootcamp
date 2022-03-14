@@ -1,0 +1,95 @@
+package com.perscholas.cafe;
+
+import java.util.Scanner;
+
+public class CafeApp {
+    public static void main(String[] args) {
+        Product coffee = new Product("Coffee", 3.00, "A basic coffee");
+        Product espresso = new Product("Espresso", 4.00, "A basic espresso");
+        Product cappuccino = new Product("Cappuccino", 5.00, "A basic cappuccino");
+
+        Scanner uIn = new Scanner(System.in);
+        int uChoice;
+        int uQtty;
+
+        boolean goodbye = false;
+
+        while (!goodbye) {
+            System.out.println();
+            System.out.println("Please select from the following:");
+            System.out.println("1: Coffee");
+            System.out.println("2: Espresso");
+            System.out.println("3: Cappuccino");
+            System.out.println("4: Checkout");
+
+            uChoice = uIn.nextInt();
+            uIn.nextLine();
+            switch (uChoice) {
+                case 1: {
+                    System.out.println();
+                    System.out.println("How many?");
+                    uQtty = uIn.nextInt();
+                    uIn.nextLine();
+                    coffee.setQuantity(uQtty);
+                    System.out.println();
+                    System.out.format("%s (%s)  $%.2f",
+                            coffee.getName(), coffee.getDescription(), coffee.calculateProductTotal());
+                    System.out.println();
+                    break;
+                }
+                case 2: {
+                    System.out.println();
+                    System.out.println("How many?");
+                    uQtty = uIn.nextInt();
+                    uIn.nextLine();
+                    espresso.setQuantity(uQtty);
+                    System.out.println();
+                    System.out.format("%s (%s)  $%.2f",
+                            espresso.getName(), espresso.getDescription(), espresso.calculateProductTotal());
+                    System.out.println();
+                    break;
+                }
+                case 3: {
+                    System.out.println();
+                    System.out.println("How many?");
+                    uQtty = uIn.nextInt();
+                    uIn.nextLine();
+                    cappuccino.setQuantity(uQtty);
+                    System.out.println();
+                    System.out.format("%s (%s)  $%.2f",
+                            cappuccino.getName(), cappuccino.getDescription(), cappuccino.calculateProductTotal());
+                    System.out.println();
+                    break;
+                }
+                case 4: {
+                    System.out.println();
+                    System.out.println("Checking out..");
+                    double coffeeSub = coffee.calculateProductTotal();
+                    double espressoSub = espresso.calculateProductTotal();
+                    double cappuccinoSub = cappuccino.calculateProductTotal();
+                    double totalSub = coffeeSub + espressoSub + cappuccinoSub;
+                    System.out.println();
+
+                    System.out.format("Item: %-18sPrice: %-9.2fQty: %-10dSubtotal: $%6.2f%n",
+                            coffee.getName(), coffee.getPrice(), coffee.getQuantity(), coffeeSub);
+                    System.out.format("Item: %-18sPrice: %-9.2fQty: %-10dSubtotal: $%6.2f%n",
+                            espresso.getName(), espresso.getPrice(), espresso.getQuantity(), espressoSub);
+                    System.out.format("Item: %-18sPrice: %-9.2fQty: %-10dSubtotal: $%6.2f%n",
+                            cappuccino.getName(), cappuccino.getPrice(), cappuccino.getQuantity(), cappuccinoSub);
+
+                    System.out.println();
+                    System.out.format("Subtotal : $%6.2f", totalSub);
+                    double salesTax = 0.07 * totalSub;
+                    System.out.println();
+                    System.out.format("Sales tax: $%6.2f", salesTax);
+                    System.out.println();
+                    double grandTotal = totalSub + salesTax;
+                    System.out.format("Total    : $%6.2f", grandTotal);
+                    System.out.println();
+                    goodbye = true;
+                    break;
+                }
+            }
+        }
+    }
+}

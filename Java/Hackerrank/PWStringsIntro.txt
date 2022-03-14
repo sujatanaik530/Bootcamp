@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String B=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        System.out.println(A.length() + B.length());
+        int aGreaterThanB = A.compareTo(B);
+        if (aGreaterThanB >= 1) {
+            System.out.println("Yes");
+        }
+        else {
+            System.out.println("No");
+        }
+        char[] arrA = A.toCharArray();
+        char[] arrB = B.toCharArray();
+        
+        arrA[0] = Character.toUpperCase(A.charAt(0));
+        arrB[0] = Character.toUpperCase(B.charAt(0));
+       
+        A = new String(arrA);
+        B = new String(arrB);
+        System.out.println(A + " " + B);
+        
+    }
+}
+
+
+
