@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import javax.persistence.TypedQuery;
+import java.util.Iterator;
 import java.util.List;
 
 public class findUser_Hql {
@@ -99,5 +100,29 @@ public class findUser_Hql {
 
         session.close();
         factory.close();
+    }
+
+    public void getUsersData() {
+        SessionFactory sf = new Configuration().configure().buildSessionFactory();
+        Session s = sf.openSession();
+
+        String hql = "SELECT u.fullname, u.email FROM User u";
+        TypedQuery q = s.createQuery(hql);
+        List<Object[]> resultUsers= q.getResultList();
+
+        System.out.println("\nPrinting with for loop");
+        for(Object[] e: resultUsers) {
+            System.out.println(e[0] + " " + e[1]);
+        }
+
+        System.out.println("\nPrinting with iterator and while loop");
+        Iterator itr = resultUsers.iterator();
+        while (itr.hasNext()) {
+            Object[] data = (Object[]) itr.next();
+            System.out.println(data[0] + " " + data[1]);
+        }
+
+        s.close();
+        sf.close();
     }
 }

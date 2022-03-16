@@ -1,0 +1,1 @@
+INSERT INTO authors (authorname, datecreated) VALUES ("Jane Austen", CURRENT_DATE());
