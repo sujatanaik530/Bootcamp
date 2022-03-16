@@ -9,7 +9,7 @@ import org.hibernate.cfg.Configuration;
 import com.test.hib.model.User;
 
 public class CreateUser {
-    public static void main(String[] args) {
+    public void createAUserTable() {
         // TODO Auto-generated method stub
         SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
