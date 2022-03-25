@@ -1,0 +1,39 @@
+div {
+	top: 50;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: blue;
+  position: relative;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0% {
+  	left: 0px; 
+  	width: 150px;
+  	height: 150px;
+  }
+  25% {
+  	left: 500px; 
+  	width: 50px;
+  	height: 50px;
+  }
+  50% {
+  	left: 1000px; 
+  	width: 150px;
+  	height: 150px;
+  }
+  75% {
+  	left: 500px; 
+  	width: 50px;
+  	height: 50px;
+  }
+  100% {
+  	left: 0px; 
+  	width: 150px;
+  	height: 150px;
+  }
+}

@@ -1,0 +1,17 @@
+.box {
+	background-color: #44444477;
+	width: 95%;
+	margin: 0 auto;
+	padding: 5px;
+	border-radius: 5px;
+}
+@media (min-width: 450px) and (max-width: 640px) {
+	p {
+		color: red;
+	}
+}
+@media (max-width: 400px) {
+	p {
+		color: blue;
+	}
+}

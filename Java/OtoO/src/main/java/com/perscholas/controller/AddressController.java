@@ -120,13 +120,13 @@ public class AddressController {
         TypedQuery tq = s.createQuery("select p, a from Person p inner join Address a on a.id = p.id");
         List<Object[]> results = tq.getResultList();
         for (Object[] r: results) {
-            System.out.println(r[0]);
-            System.out.println(r[1]);
+//            System.out.println(r[0]);
+//            System.out.println(r[1]);
             Person p = (Person) r[0];
             Address a = (Address) r[1];
             System.out.println(p.getName() + " " + p.getAge());
             System.out.println(p.getMyaddress().getCity());
-            System.out.println(a.getCity());
+//            System.out.println(a.getCity());
         }
 
         s.close();

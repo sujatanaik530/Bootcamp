@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+html {
+	font-family: 'Quicksand', sans-serif;
+}
+#tc {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#tc-photo {
+	width: 20%;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 100px;
+}
+#tc-nt {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex: 1;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 100px;
+}
+#tc-name {
+}
+#tc-title {
+}
+#tc-general {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 100px;
+}
+.tcg-item {
+	
+}
+#tc-bio {
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 100px;
+}

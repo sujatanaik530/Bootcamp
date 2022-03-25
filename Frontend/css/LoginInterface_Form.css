@@ -1,0 +1,10 @@
+form {
+	padding: 20px;
+    border: 1px solid black;
+    width: 400px;
+    margin: auto;
+}
+#email, #pass {
+    background-color: lightgray;
+    color: darkgray;
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<title>Form demo</title>
+<style>
+input{
+    display: block;
+    margin-top: 10px;
+}
+form{
+    border: 1px dashed black;
+    padding: 15px;
+}
+</style>
+</head>
+<body>
+	<form>
+		<br/><label for="FullName">Full Name</label>
+		<br/><input id="FullName" type="text" name="name" required/>
+
+		<br/><label for="email">Email</label>
+		<br/><input id="email" type="email" name="email"/>
+
+		<br/><label for="pass">Password</label>
+		<br/><input id="pass" type="password" name="p" disabled>
+
+		<br/><label for="quant">Quantity</label>
+		<br/><input id="quant" type="number" name="ocena" value="0" min="1" max="7">
+
+		<br/><label for="dob">Date of birth</label>
+		<br/><input type="date" name="data" min="2022-01-01">
+
+		<br/><label for="hour">Hour</label>
+		<br/><input id="hour" type="time" name="time">
+
+		<br/><label for="c">Favorite color</label>
+		<br/><input id="c" type="color" name="color" value="#ff00aa">
+
+		<br/><input id="sub" type="submit" name="Submit" value="Save">
+	</form>
+</body>
+</html>

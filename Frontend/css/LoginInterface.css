@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+body {
+    background-color: #3f5f02a6;
+    font-family: 'Dancing Script';
+}
+form {
+	padding: 20px;
+    width: 400px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 10px 10px #3f5f02;
+}
+a {
+    color:  darkred;
+    text-decoration: none;
+}
+img {
+    width: 75px;
+    border: black;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 10px;
+    left: 47%;
+    box-shadow: 3px 3px dimgray;
+}
+.img-container {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    border: none;
+    background-color: aqua;
+    background-image: url("../images/flower.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    border-radius: 75%;
+}
+.graybgc {
+    background-color: lightgray;
+    color: darkgray;
+    width: 300px;
+    box-sizing: border-box;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: none;
+    text-align: center;
+}
+#login {
+    background-color: #009a9abd;
+    color: white;
+    width: 300px;
+    box-sizing: border-box;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;    
+    border: none;
+}

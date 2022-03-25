@@ -1,1 +1,22 @@
-INSERT INTO authors (authorname, datecreated) VALUES ("Jane Austen", CURRENT_DATE());
+INSERT INTO authors (authorname, datecreated)
+VALUES
+("Mike McGrath", CURRENT_DATE()),
+("Mark Bittman", CURRENT_DATE()),
+("Nikki Goldbeck", CURRENT_DATE()),
+("Barry R. Clarke", CURRENT_DATE()),
+("Julie Vosburgh Agnone", CURRENT_DATE()),
+("Johnny Acton", CURRENT_DATE()),
+("Karen Christensen", CURRENT_DATE()),
+("Robin Lane Fox", CURRENT_DATE()),
+("James Alfred Fizzell", CURRENT_DATE()),
+("Julie Bawden-Davis", CURRENT_DATE()),
+("Darlene R. Stille", CURRENT_DATE()),
+("Michelle Nichols", CURRENT_DATE()),
+("Valerie Stimac", CURRENT_DATE()),
+("Sten F. Odenwald", CURRENT_DATE()),
+("Marcus Du Sautoy", CURRENT_DATE()),
+("Peter Strom Rudman", CURRENT_DATE()),
+("Dave Grohl", CURRENT_DATE()),
+("Ann Patchett", CURRENT_DATE()),
+("Michael Schur", CURRENT_DATE()),
+("Stanley Tucci", CURRENT_DATE());

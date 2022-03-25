@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Valid</title>
+	<script type="text/javascript">
+		function validInput() {
+			var userNum;
+			do {
+				userNum = prompt("Enter a number between 0 and 100, both excluded");
+			} while ((userNum <= 0) || (userNum >= 100))
+			alert("The square of " +userNum + " is " + userNum ** 2);
+		}
+		function squareNumber() {
+			var userNum;
+			userNum = document.getElementById("inValue").value;
+			if ((userNum > 0) && (userNum < 100)) {
+				var squareOfNum = userNum ** 2;
+				document.getElementById("outValue").innerHTML = squareOfNum;
+			}
+			else {
+				document.getElementById("outValue").innerHTML = "Enter a number between 0 and 100, both excluded";
+				document.getElementById("inValue").value = "";
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="inValue" placeholder="Enter a number"><br>
+	<button onclick="squareNumber();">Click</button>
+	<p id="outValue"></p>
+</body>
+</html>

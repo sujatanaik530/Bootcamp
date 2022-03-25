@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<title>Register Page</title>
+<style>
+form {
+	padding: 20px;
+    border: 1px solid black;
+    width: 400px;
+    margin: auto;
+}
+</style>
+</head>
+<body>
+	<form>
+		<h1>Register Page</h1>
+		<label for="fname">First Name</label>
+		<input id="fname" type="text" name="fname" placeholder="Enter Your First Name" />
+		<br/>
+		<label for="lname">Last Name</label>
+		<input id="lname" type="text" name="lname" placeholder="Enter Your Last Name" />
+		<br/>
+		<label for="email">Email</label>
+		<input id="email" type="email" name="email" placeholder="Enter Your Email"/>
+		<br/>
+		<label for="pass">Password</label>
+		<input id="pass" type="password" name="password" placeholder="Enter Your Password"/>
+		<br/>
+		<label for="cpass">Confirm Password</label>
+		<input id="cpass" type="password" name="cpassword" placeholder="Confirm Your Password"/>
+		<br/>
+		<fieldset>
+			<legend>Gender</legend>
+			<input type="radio" id="female" name="gender" value="Female">
+			<label for="female">Female</label>
+			<input type="radio" id="male" name="gender" value="Male">
+			<label for="male">Male</label>  			
+  		</fieldset>
+  		<br/>
+		<label for="dob">Date of birth</label>
+		<input type="date" name="data" min="2022-01-01">
+		<br/>
+		<fieldset>
+			<legend>Hobbies</legend>
+		<input type="checkbox" id="sports" name="sports" value="Sports">
+  		<label for="sports"> You like sports</label>
+  		<input type="checkbox" id="eat" name="eat" value="Eat">
+  		<label for="eat"> You like to eat</label>
+  		<input type="checkbox" id="sleep" name="sleep" value="Sleep">
+  		<label for="sleep"> You like to sleep</label>
+  		</fieldset>
+  		<br/>
+		<input id="sub" type="submit" name="Submit" value="Login">
+	</form>
+</body>
+</html>

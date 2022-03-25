@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Number Demo</title>
+	<script type="text/javascript">
+		function sum() {
+			var numstr = prompt("Enter space-separated numbers to sum");
+			var nums = numstr.split(" ");
+			var sumnums = 0;
+			for(var num of nums) {
+				sumnums += Number(num);
+			}
+			document.getElementById("p1").innerHTML = "Sum of " + numstr + " is " + sumnums;
+		}
+		function calculator1() {
+			var userexp = prompt("Enter the addition/subtraction expression to evaluate");
+			var tokens = userexp.split();
+		}
+	</script>
+</head>
+<body onload="sum();">
+	<p id="p1"></p>
+</body>
+</html>

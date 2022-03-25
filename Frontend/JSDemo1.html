@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript Demo1</title>
+	<script type="text/javascript">
+		var myFirstVariable = 1;
+		let mySecondVariable = 2.0;
+		const myConstantPI = 3.14;
+		let sum = myConstantPI + mySecondVariable + myFirstVariable;
+		console.log("The variables added together are " + sum);
+		console.log(3==3);
+		console.log(3=="3");
+		console.log("3"=="3");
+		console.log(3==="3");
+
+		var newNum = 9;
+		console.log(newNum);
+		newNum = newNum + 1;
+		console.log(newNum);
+		newNum++;
+		console.log(newNum);
+		newNum += 1;
+		console.log(newNum);
+
+		// JavaScript allows single-line comments.
+		/* Another kind of comment JavaScript allows:
+			is the multi-line comment - just like in Java! */
+
+		/*var username = "Sujata";
+		var age = "25";
+		alert("My name is " + username + " and my age is " + age + " years.");*/
+
+		var myNumber = 5;
+		if (myNumber >= 5) {
+			console.log(myNumber);
+		}
+
+		function myFunction1() {
+			var text = "";
+			var i = 0;
+			while (i < 10) {
+			  	text += "The number is " + i + "<br>";
+			  	console.log(text);
+				document.getElementById("tag").innerHTML = text;
+			  	i++;
+			}
+		}
+		function myFunction2() {
+			var text = "";
+			for (var i = 0; i < 10; i++) {
+			  	text += "The number is " + i + "<br>";
+			  	console.log(text);
+				document.getElementById("tag").innerHTML = text;
+			  	i++;
+			}
+		}
+	</script>
+</head>
+<body onload="myFunction2()">
+	<p id="tag">Example text</p>
+</body>
+</html>

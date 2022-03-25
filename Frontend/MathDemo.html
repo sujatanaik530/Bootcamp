@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Number Demo</title>
+	<script type="text/javascript">
+		function f1() {	
+			document.getElementById('p1').innerHTML = Math.pow(7, 2);
+		}
+
+		function f2() {
+			var input = prompt("Enter a range (in the form 5 15):");
+			var range = input.split(" ");
+			var low = Number(range[0]);
+			var high = Number(range[1]);
+			var guess = (Math.floor(Math.random() * (Number(range[1]) - Number(range[0])) + Number(range[0])));
+			var stopper = 1;
+			var guesses = []; // to keep track of all user guesses
+			var userGuess = Number(prompt("Guess a number between " + range[0] + " and " + range[1]));
+			
+
+			while (stopper <= 10) {
+				if (guess == userGuess) {
+					alert("You got it: " + userGuess);
+					break;
+				}
+				else if ((userGuess < guess) && (userGuess >= low) && (!guesses.includes(userGuess))) {
+					range[0] = userGuess + 1;
+					guesses.push(userGuess);
+				}
+				else if ((userGuess > guess) && (userGuess <= high) && (!guesses.includes(userGuess))) {
+					range[1] = userGuess - 1;
+					guesses.push(userGuess);
+				}
+				stopper++;
+				userGuess = Number(prompt("Keep guessing a number between " + range[0] + " and " + range[1]));
+			}
+			if (guess != userGuess) {
+				alert("Sorry, the answer was " + guess);
+			}
+		}
+	</script>
+</head>
+<body onload="f2();">
+	<p id="p1"></p>
+</body>
+</html>
