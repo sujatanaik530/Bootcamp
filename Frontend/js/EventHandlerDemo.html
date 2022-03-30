@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function validate() {
+            var inputFN = document.getElementById("firstNameId");
+            var inputLN = document.getElementById("lastNameId");
+            if (inputFN.value == '') {
+                alert("First Name is required.");
+                inputFN.focus();;
+                return false;
+            }
+            else if (inputLN.value == '') {
+                alert("Last Name is required.");
+                inputLN.focus();
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        function firstNameClick() {
+            var inputFN = document.getElementById("firstNameId");
+            inputFN.placeholder = "Enter first name";
+        }
+        function lastNameClick() {
+            var inputFN = document.getElementById("lastNameId");
+            inputFN.placeholder = "Enter last name";
+        }
+    </script>
+</head>
+
+<body>
+    <p>This is a p tag.</p>
+    <p id="pid">This is a p tag with an ID.</p>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            /*$("p").on("click", function(e) {
+                console.log(e.target.textContent + " was clicked.");
+            });*/
+            $("#pid").on("click", function(e) {
+                console.log(e.target.textContent + " was clicked.");
+            });
+            $("form").on("submit", function() {
+                console.log("Form submitted");
+            });
+        });
+    </script>
+    <form name="myform" onsubmit="return validate();">
+        First Name <input type="text" name="firstName" id="firstNameId" onfocus="firstNameClick();" title="Enter first name"><br>
+        Last Name <input type="text" name="lastName" id="lastNameId" onfocus="lastNameClick();" title="Enter last name"></br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.addEventListener('keydown', function () {
+            console.log('keyCode: ' + event.keyCode);
+            console.log('key: ' + event.key);
+            console.log('code: ' + event.code);
+        });
+
+        const button = document.querySelector('button');
+
+        // Function to modify the text content of the paragraph
+        const changeText = () => {
+            event.preventDefault();
+            const p = document.querySelector('p');
+
+            //p.textContent = "I changed because of an event listener.";
+            p.textContent = document.getElementById("firstNameId").value;
+            p.textContent += " " + document.getElementById("lastNameId").value;
+            button.textContent = "I was clicked";
+        }
+
+        // event handler for mouse over
+        const mOverText = () => {
+            const p = document.querySelector('p');
+            p.style.color = "green";
+            p.style.border = "1px solid";
+            p.textContent = "MouseOver";
+        }
+
+        // event handler for mouse out
+        const mOutText = () => {
+            const p = document.querySelector('p');
+            p.style.color = "blue";
+            p.style.border = "1px solid";
+            p.textContent = "MouseOut";
+        }
+
+        // Listen for click event
+        //button.addEventListener('click', changeText);
+
+        // listen for mouse over
+        button.addEventListener('mouseover', mOverText);
+
+        //listen for mouse out
+        button.addEventListener('mouseout', mOutText);
+    </script>
+</body>
+
+</html>

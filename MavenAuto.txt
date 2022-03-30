@@ -1,0 +1,3 @@
+In the Maven tool window, click Build Tools Settings and select the Auto-Reload Settings option.
+Make sure the 'Reload project after changes in the build scripts'. 
+Also, select 'Any changes'.

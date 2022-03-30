@@ -1,0 +1,101 @@
+Review Material Concepts for KBA
+
+---HTML---
+• HTML Tags
+• Syntax
+• Open and close tags
+• Self-closed tags
+• Block and Inline elements
+• Attributes
+• Chrome Browser Inspector
+• Parent-child relationship between HTML elements
+• Document Object Model
+• Box Model
+
+---CSS---
+• in-line Style
+• More attributes
+• Internal Style
+• Intro to CSS
+• Syntax
+• Selectors
+• Selectors Combinators
+• Introduction, Container, Item
+• parent & child nodesWhich notation will effect all div elements enclosed by section elements?
+section div
+section~div
+section+div
+section>div
+
+---Sample Questions---
+
+What is the correct syntax for an element selector in CSS?
+p {color:red;}
+
+How do you write comments in CSS?
+/* */
+
+The anchor tag <a> is used to do what exactly?
+Hyperlink (internal, external)
+
+In CSS, which stylesheet rules have the lowest precedence?
+External tags/elements (inline > id > class > element)
+
+Which notation will apply the same rules to both paragraph and section elements?
+section p
+section+p
+section,p <--
+section~p
+
+Which notation will effect all paragraphs immediately following section elements?
+section p
+section~p
+section+p
+section>p
+
+What is the default character set in HTML 5? 
+UTF8
+
+Which CSS/HTML attribute has a unique value? 
+id
+
+Which HTML element is used to create a dropdown list?
+<select>
+
+In CSS, which prefix refers to the class of an element?
+.
+
+Which CSS properties enable flexbox positioning?
+display: flex
+
+What is the use of the <link> element?
+It used to link a resource (e.g.stylesheet). It should be placed in the <head>.
+
+What are the different ways to specify colors in CSS?
+(1) color name
+(2) #hexvalue
+(3) rgb()
+(4) rgba()
+(4) hsl()
+
+What does the <p> tag represent?
+A paragraph element, block level
+
+When using an HTML form, which type allows the user to select none, one, several or all of
+the boxes from the options offered?
+checkbox
+
+How to preserve the exact formatting of a section of text, including spacing and line breaks?
+<pre>
+
+How can we alter the transparency of objects in CSS using a property?
+opacity
+
+In HTML, attrubutes usually come in name/value pairs like name="value". True or False?
+True
+
+In CSS, the animation is made up of a keyframe. What does @keyframes keyword allow us to define?
+animation code
+
+In CSS, what is the prefix that allows us to refer to the id of an element?
+#

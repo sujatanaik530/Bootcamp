@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <head>
+    <title>Events</title>
+  </head>
+  <body>
+    <button>Click me</button>
+    <p>Try to change me.</p>
+   <script>
+		const button = document.querySelector('button');
+		// Function to modify the text content of the paragraph
+    const changeText = () => {
+    const p = document.querySelector('p');
+
+    p.textContent = "I changed because of an event listener.";
+	button.textContent="I was clicked";
+    }
+
+     // Listen for click event
+    button.addEventListener('click', changeText);
+   </script>
+  </body>
+</html>
+

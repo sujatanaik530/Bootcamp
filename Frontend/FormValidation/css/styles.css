@@ -1,0 +1,36 @@
+form{
+    padding: 30px;
+    margin: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: hsla(161, 89%, 93%, 0.75);
+}
+label{
+    font-weight: 600;
+}
+body{
+    background-image: url(https://clydebutcher.com/wp-content/uploads/2016/11/grand-canyon-9.jpg);
+    background-color: #cccccc;
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: fill; 
+}
+h1{
+    padding: 5px;
+    background-color: aquamarine;
+}
+#hiddenFNError {
+    display: none;
+}
+#hiddenLNError {
+    display: none;
+}
+#hiddenEmailError {
+    display: none;
+}
+#hiddenPasswordError {
+    display: none;
+}
+#hiddenCPasswordError {
+    display: none;
+}

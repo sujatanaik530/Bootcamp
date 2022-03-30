@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <head>
+  </head>
+  <body>
+    <form>
+  First name:<br>
+  <input type="text" id="fname">
+  <br>
+  <input type="submit" value="Submit" id="btn">
+   </form> 
+   <script>
+    const name = document.getElementById("fname");
+    const btn = document.getElementById("btn");
+    name.addEventListener('focus', changeToCoral);
+    name.addEventListener('blur', changeToWhite);
+    document.querySelector('form').addEventListener("submit",
+    function (){alert(name.value)});
+    function changeToCoral() { name.style.backgroundColor = 'coral'; btn.style.color = 'green';}
+    function changeToWhite() { name.style.backgroundColor = 'white'; btn.style.color = 'black';}
+   </script>
+  </body>
+</html>

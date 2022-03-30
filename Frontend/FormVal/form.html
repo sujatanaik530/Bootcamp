@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+      <script type="text/javascript">
+        function validateEmail() {
+            var emailID = document.myForm.EMail.value;
+            atpos = emailID.indexOf("@");
+            //alert(atpos)
+            dotpos = emailID.lastIndexOf(".");
+            if (atpos < 1 || dotpos - atpos < 2) {
+                alert("Please enter correct email ID");
+                document.myForm.EMail.focus();
+                return false;
+            } else {
+                return true;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="form.html" name="myForm" onsubmit="return(validate());" method="POST" id="form">
+        <table cellspacing="2" cellpadding="2" style='border:"1px"'>
+            <tr>
+                <td><input type="text" name="Name" value="" id="NAME" placeholder="Enter Name" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="EMail" value="" id="emailID" placeholder="Enter Email" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="Zip" id="ZipID" placeholder="Enter Zip Code" /></td>
+            </tr>
+            <tr>
+                <td> <select name="Country" id="CountryId">
+                        <option value="None"> [choose yours] | Select Country</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="UAE">UAE</option>
+                    </select> </td>
+            </tr>
+            <tr>
+                <td><input type="password" name="password" value="" id="password" placeholder="Password" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+    <div id="feedback"></div>
+    <script type="text/javascript" src="script/script.js"></script>
+</body>
+
+</html>

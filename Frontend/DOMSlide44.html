@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Slide 44</title>
+</head>
+<body>
+<script>
+	// the chat history
+	let chathistory = document.createElement("p");
+	chathistory.setAttribute("id", "chathistory");
+	chathistory.style.border = "1px solid";
+	chathistory.style.width = "500px";
+	chathistory.style.height = "300px";
+	chathistory.style.overflow = "auto";
+	document.body.appendChild(chathistory);
+
+	// space between chat history and the rest of the elements at the bottom
+	document.body.appendChild(document.createElement("br"));
+	document.body.appendChild(document.createElement("br"));
+
+	// the name of the sender
+	let sender = document.createElement("input");
+	sender.setAttribute("id", "sender");
+	sender.setAttribute("type", "text");
+	sender.setAttribute("placeholder", "Your name here");
+	sender.style.marginRight = "20px";
+	document.body.appendChild(sender);
+
+	// do we really need a keyboard listener for the name box?
+
+	// the message to be sent
+	let message = document.createElement("input");
+	message.setAttribute("id", "message");
+	message.setAttribute("type", "text");
+	message.setAttribute("placeholder", "Your message here");
+	message.style.marginRight = "20px";
+	document.body.appendChild(message);	
+
+	// keyboard listener for the message box
+	message.addEventListener("keypress", checkEnter);
+
+	// the submit button
+	let btn = document.createElement("button");
+	btn.innerHTML = "Submit";
+	document.body.appendChild(btn);
+
+	// mouse click listener for the submit button
+	btn.addEventListener("click", submitMsg);
+
+	// we want to 'submit' only if the 'Enter' key is pressed
+	function checkEnter() {
+		if (event.key === "Enter") {
+			submitMsg();
+		}
+	}
+
+	// what to do on 'submit'
+	function submitMsg() {
+		let theChatHisory = document.getElementById("chathistory");
+
+		let theSender = document.getElementById("sender");
+
+		// 'submit' only if there is a value in the sender field
+		if (theSender.value.length != 0) {
+			let theMessage = document.getElementById("message");
+			let newLine = "<b>" + theSender.value + ":</b> " + theMessage.value;
+
+			// I had to use innerHTML rather than textContent, so I could insert a line break <br>.
+			let newHistory = theChatHisory.innerHTML + newLine + "<br/>";
+			theChatHisory.innerHTML = newHistory;
+
+			// clear message field
+
+			// setAttribute on value only works for setting the first time.
+			//message.setAttribute("value", "");
+
+			message.value = "";
+		}
+		else {
+			// focus on sender field, so user can input a name
+			sender.focus();
+		}
+	}
+
+</script>
+</body>
+</html>
