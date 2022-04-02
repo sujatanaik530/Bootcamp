@@ -1,0 +1,284 @@
+09:01:43 From  Jared Harms  to  Everyone:
+	you can auto-mute in your audio settings
+09:34:47 From  Jared Harms  to  Everyone:
+	Eric I have a fancy new error on intelliJ this morning that wasn't there yesterday 😅
+09:35:49 From  Jennifer Nelson  to  Everyone:
+	one million points
+09:35:57 From  Bryan Thaoxaochay  to  Everyone:
+	GG
+09:36:01 From  Jessica Fatim  to  Everyone:
+	- drew carey
+09:36:14 From  Steven VanCourt  to  Everyone:
+	lol
+09:43:49 From  Alex Ertl  to  Everyone:
+	sorry guys :(
+09:43:57 From  Thanh Nguyen  to  Everyone:
+	^ honest man ...
+09:45:40 From  Thanh Nguyen  to  Everyone:
+	is that one of the snippet question?
+09:50:32 From  Giorvanny Lindor | C1  to  Everyone:
+	20
+09:50:40 From  Franz Cordes-Eklund  to  Everyone:
+	“1010”
+09:51:05 From  Franz Cordes-Eklund  to  Everyone:
+	Is it a string 1010 or an integer 1010
+09:51:12 From  Giorvanny Lindor | C1  to  Everyone:
+	no conversion 🙁
+09:56:56 From  Xu Huang Lin  to  Everyone:
+	maybe this?		var x = (i != 5) ? true : false;
+09:57:23 From  Bryan Thaoxaochay  to  Everyone:
+	break?
+09:59:38 From  Jared Harms  to  Everyone:
+	===      not equals
+10:01:38 From  Erika Osterbur  to  Everyone:
+	10 == “10” is true
+10:01:45 From  Erika Osterbur  to  Everyone:
+	10 === “10” is false
+10:02:03 From  Steven VanCourt  to  Everyone:
+	equavlent vs true sameness
+10:02:47 From  Xu Huang Lin  to  Everyone:
+	== just doesn't check type
+10:02:51 From  Franz Cordes-Eklund  to  Everyone:
+	=== matches type
+10:02:58 From  Jennifer Nelson  to  Everyone:
+	^^^
+10:03:22 From  Steven VanCourt  to  Everyone:
+	or eqaulivent vs exactness
+10:03:24 From  Jennifer Nelson  to  Everyone:
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
+10:03:27 From  Xu Huang Lin  to  Everyone:
+	same for != and !==
+10:03:38 From  Jennifer Nelson  to  Everyone:
+	^ty
+10:05:55 From  Franz Cordes-Eklund  to  Everyone:
+	The exclamation symbol takes the place of one of the equal signs
+10:06:49 From  Alex Ertl  to  Everyone:
+	Don't not do double negatives?
+10:09:14 From  Erika Osterbur  to  Everyone:
+	Oh dang I didn’t know you could redeclare a var !
+10:10:35 From  Alex Ertl  to  Everyone:
+	Don't pollute the global scope
+10:15:08 From  Xu Huang Lin  to  Everyone:
+	It won't add null at the end
+10:15:29 From  Xu Huang Lin  to  Everyone:
+	yes
+10:17:20 From  Franz Cordes-Eklund  to  Everyone:
+	NaN
+10:19:15 From  Xu Huang Lin  to  Everyone:
+	don't you need a break point?
+10:19:44 From  Steven VanCourt  to  Everyone:
+	so 100, 400, 900, 1600, 2000 are the new values?
+10:21:43 From  Sam Perry l C1  to  Everyone:
+	I believe so but the question is what does the non value at the end of the array do to the whole thing
+10:22:11 From  Xu Huang Lin  to  Everyone:
+	extra comma won't add a null at the end
+10:22:38 From  Bryan Thaoxaochay  to  Everyone:
+	Ran it, and it looks like it does nothing
+10:22:39 From  Steven VanCourt  to  Everyone:
+	missed that, yeah I assume, js will read the empty spot as zero and not null
+10:23:02 From  Xu Huang Lin  to  Everyone:
+	Bryan, have you tried to print the arr?
+10:23:28 From  Xu Huang Lin  to  Everyone:
+	Steven, won't add anything, not even zero
+10:23:56 From  Esmond Kim  to  Everyone:
+	Does it interpret a white space character and error?
+10:24:19 From  Xu Huang Lin  to  Everyone:
+	it does nothing, you can just run it print it, see it yourself
+10:24:31 From  Steven VanCourt  to  Everyone:
+	really? so length is still 5?
+10:24:36 From  Franz Cordes-Eklund  to  Everyone:
+	Length is 6
+10:24:37 From  Bryan Thaoxaochay  to  Everyone:
+	yeah
+10:24:37 From  Xu Huang Lin  to  Everyone:
+	yes
+10:24:38 From  Xu Huang Lin  to  Everyone:
+	5
+10:24:50 From  Franz Cordes-Eklund  to  Everyone:
+	Im confused
+10:24:56 From  Bryan Thaoxaochay  to  Everyone:
+	arr[arr.length-1] doesn't print undefined
+10:25:13 From  Xu Huang Lin  to  Everyone:
+	just print arr.length
+10:25:22 From  Carlos Perez  to  Everyone:
+	I remember working on the old typewriters. Not sure how I just feel about that. LoL
+10:25:27 From  Steven VanCourt  to  Everyone:
+	do console.log(arr.length)
+10:25:37 From  Bryan Thaoxaochay  to  Everyone:
+	Length is 5
+10:25:49 From  Yangyang Pearson (C3)  to  Everyone:
+	[100, 400, 900, 1600, 2500] (5)
+10:25:55 From  Franz Cordes-Eklund  to  Everyone:
+	I thought the extra comma was adding another value?
+10:26:02 From  Josh Johnson | C1  to  Everyone:
+	^
+10:26:09 From  Steven VanCourt  to  Everyone:
+	only if you then give it a value to read
+10:26:16 From  Steven VanCourt  to  Everyone:
+	that's what im learning at least
+10:26:50 From  Xu Huang Lin  to  Everyone:
+	I have seem ppl also add an extra comma for JSON objects, doesn't do anything, it is just a coding style	{	    a: 1,	    b: 2,	}
+10:26:51 From  Brandi Noseworthy | C1  to  Everyone:
+	[100, 400, 900, 1600, 2500] (5) then[100, 400, 900, 1600, 2500,] (would be 6)? Is that right?
+10:26:52 From  Bryan Thaoxaochay  to  Everyone:
+	Yeah, I checked to see if the last element in the array was undefined, but got 50
+10:27:21 From  Steven VanCourt  to  Everyone:
+	both have a length of 5 brandi
+10:27:26 From  Xu Huang Lin  to  Everyone:
+	[ 1, 2, ] is the same as [ 1, 2 ]
+10:27:31 From  Brandi Noseworthy | C1  to  Everyone:
+	oh kk thank you
+10:27:36 From  Steven VanCourt  to  Everyone:
+	np
+10:28:03 From  Xu Huang Lin  to  Everyone:
+	This why I don't like JavaScript😂
+10:28:23 From  Steven VanCourt  to  Everyone:
+	I think this is a plus to js
+10:29:10 From  Xu Huang Lin  to  Everyone:
+	You can do it in Java too:	int[] a = { 1,2, };	length is 2
+10:29:51 From  Steven VanCourt  to  Everyone:
+	iso why don't you like js?
+10:30:14 From  Franz Cordes-Eklund  to  Everyone:
+	Eric would it work on another browser?
+10:31:19 From  Jennifer Nelson  to  Everyone:
+	question regarding syntax of .forEach & .filter: one of the optional params is a function that can take 3 params (which are also optional).  If I pass in one param in that function, what is it's default value?  Is it index?
+10:31:28 From  Jennifer Nelson  to  Everyone:
+	array.filter(function(currentValue, index, arr), thisValue)
+10:31:42 From  Jennifer Nelson  to  Everyone:
+	or maybe currentValue?
+10:33:00 From  Xu Huang Lin  to  Everyone:
+	currentValue
+10:33:04 From  Bryan Thaoxaochay  to  Everyone:
+	I think it'll be the current value
+10:33:07 From  Jennifer Nelson  to  Everyone:
+	^ty!
+10:33:47 From  Xu Huang Lin  to  Everyone:
+	If you don't wanna open the IDE and test your assumption. You can google JavaScript online compiler and run your code on a website
+10:34:17 From  Jennifer Nelson  to  Everyone:
+	^testing in IDE now;
+10:34:41 From  Franz Cordes-Eklund  to  Everyone:
+	So one trailing comma will not create a new value but multiple commas will? Like [1,2,3,,,]  ??
+10:35:13 From  Paul Schmitz  to  Everyone:
+	I think the reason some people don't like js is because questions like that are not necessarily obvious
+10:35:19 From  Neil McKenzie  to  Everyone:
+	var arr = [10,20,30,40,50, ];	arr.forEach(function(value,index,array){		  console.log("index " + index )	    console.log("value " + value )	  console.log("index of array " + array[index])	  array[index] = value * value	  console.log(array[index] = value * value)	});
+10:35:32 From  Bryan Thaoxaochay  to  Everyone:
+	multiple commas looks like it will add to the length
+10:35:34 From  Neil McKenzie  to  Everyone:
+	this will show you whats happening step by step basically
+10:35:55 From  Paul Schmitz  to  Everyone:
+	whereas in java you know it would make a compiler error
+10:36:00 From  Xu Huang Lin  to  Everyone:
+	var a = [1,2,,];	console.log(a.length); // 3
+10:36:18 From  Bryan Thaoxaochay  to  Everyone:
+	^^ last element will be undefined
+10:38:14 From  Jennifer Nelson  to  Everyone:
+	@Xu Huang;  assumption tested, x is currentValue thanks again :)
+11:03:42 From  David johnson  to  Everyone:
+	var arr = [10,20,30,40,50,];	console.log("Arr length = " + arr.length);		Prints 5 (!)  for me with node.js
+11:04:51 From  Alex Ertl  to  Everyone:
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Trailing_commas
+11:05:18 From  Thanh Nguyen  to  Everyone:
+	I'm gonna tutor on spring boot, security...and all that
+11:07:40 From  Neil McKenzie | C3  to  Everyone:
+	yeah seems like arr.length is ignoring the empty value for me also
+11:09:39 From  Esmond Kim  to  Everyone:
+	I got an empty array back
+11:09:43 From  Erika Osterbur  to  Everyone:
+	same
+11:09:56 From  Erika Osterbur  to  Everyone:
+	I don’t understand where x is coming from
+11:10:15 From  Jared Harms  to  Everyone:
+	same ^
+11:10:23 From  Sujata Naik C3  to  Everyone:
+	x is each item in the reversed array
+11:10:32 From  Jared Harms  to  Everyone:
+	ty
+11:10:39 From  Erika Osterbur  to  Everyone:
+	👍
+11:10:41 From  Paul Schmitz  to  Everyone:
+	x is being passed as a function argument
+11:10:57 From  Esmond Kim  to  Everyone:
+	Ahh.  So function on line 20 is the callback for the reverse() method?
+11:11:28 From  Alex Ertl  to  Everyone:
+	is it because 0 equates to false?
+11:11:36 From  Bryan Thaoxaochay  to  Everyone:
+	^^
+11:11:52 From  cory quirk (C3)  to  Everyone:
+	yeah `function(x){return x}` … x exists as a function parameter, we do similar things in java except you would see the type in front of `x`.
+11:11:57 From  Paul Schmitz  to  Everyone:
+	i think it is just applying the reverse, and then it is applying the filter
+11:12:31 From  Sam Perry l C1  to  Everyone:
+	is the reason the array is increasing in the last console log because its been reversed twice?
+11:12:44 From  Jared Harms  to  Everyone:
+	😂
+11:12:49 From  Thanh Nguyen  to  Everyone:
+	doesnt mod returns remainder?
+11:12:51 From  David johnson  to  Everyone:
+	SO why is the filter function reversing the array again ?  is it acting like a stack?
+11:12:56 From  Josh Johnson | C1  to  Everyone:
+	^Also wondering why it’s not going from high to low
+11:13:15 From  Paul Schmitz  to  Everyone:
+	it's being reversed because they are also calling the reverse method
+11:13:19 From  Franz Cordes-Eklund  to  Everyone:
+	FizzBuzz
+11:13:56 From  Sujata Naik C3  to  Everyone:
+	reverse is used twice
+11:15:25 From  Steven VanCourt  to  Everyone:
+	for (var i = 1; i < 101; i++) {	    if (i % 15 == 0) console.log("FizzBuzz");	    else if (i % 3 == 0) console.log("Fizz");	    else if (i % 5 == 0) console.log("Buzz");	    else console.log(i);	}
+11:15:25 From  David johnson  to  Everyone:
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter		OKay this is just @#$% stupid  the way filter works changes between using it as a => function and as a callback function
+11:18:22 From  Eric Heilig  to  Everyone:
+	var arr = [10, 20, 30, 40, 50, ];	arr.forEach(function(value, index, array) {	    array[index] = value * value	});	console.log(arr.reverse().filter(function(x) {	    return x % 5	}));
+11:18:49 From  Eric Heilig  to  Everyone:
+	var arr = [1, 2, 3, 4, 5, ];	arr.forEach(function(value, index, array) {	    array[index] = value * value	});	console.log(arr.reverse().filter(function(x) {	    return x % 5	}));
+11:21:26 From  Franz Cordes-Eklund  to  Everyone:
+	What are the double indexes doing?
+11:21:32 From  Franz Cordes-Eklund  to  Everyone:
+	[1][0]
+11:22:27 From  Josh Johnson | C1  to  Everyone:
+	4+5 ?
+11:23:03 From  Josh Johnson | C1  to  Everyone:
+	Ah it’s “4” + “5”
+11:24:25 From  Franz Cordes-Eklund  to  Everyone:
+	42
+11:29:43 From  Jennifer Nelson  to  Everyone:
+	^^ty!
+11:29:49 From  Yangyang Pearson (C3)  to  Everyone:
+	ty
+11:30:04 From  Jessica Fatim  to  Everyone:
+	ty!
+11:31:49 From  Esmond Kim  to  Everyone:
+	Not 100% sure, but I think forEach is for processing or logging and has no return.  Map returns something.
+11:31:56 From  Bryan Thaoxaochay  to  Everyone:
+	^^
+11:32:06 From  cory quirk (C3)  to  Everyone:
+	https://codeburst.io/javascript-map-vs-foreach-f38111822c0f
+11:32:29 From  Jennifer Nelson  to  Everyone:
+	https://stackoverflow.com/questions/34426458/javascript-difference-between-foreach-and-map
+11:32:31 From  Eric Heilig  to  Everyone:
+	The Array.map() method calls a provided function on every element in the array and utilizes return values to create a new Array of the same size, whereas Array.forEach() calls a provided function on every element in the array but does not return a new array.
+11:32:56 From  Yangyang Pearson (C3)  to  Everyone:
+	https://code.tutsplus.com/tutorials/javascript-map-vs-foreach-when-to-use-each-one--cms-38365
+11:34:13 From  Bryan Thaoxaochay  to  Everyone:
+	keys
+11:34:29 From  Jennifer Nelson  to  Everyone:
+	^^^
+11:34:52 From  Bryan Thaoxaochay  to  Everyone:
+	To get values, person[I]
+11:35:42 From  Eric Heilig  to  Everyone:
+	var person = {	        firstName: "John",	        lastName: "Doe",	        age: 50,	        eyeColor: "blue"	    };		    for (var i in person) {	        console.log(i);	    }
+11:36:29 From  Eric Heilig  to  Everyone:
+	This is a true statement !!!!!    Prototypes are the mechanism by which JavaScript objects inherit features from one another. Objects that are created from the same object have the same properties and methods.
+11:42:23 From  Eric Heilig  to  Everyone:
+	<script>	    var arr = ["9+1", "-5.0+-2.0", "0000.2+0.5",	        "3.0+2", "b+c"];		    for (var i = 0; i < arr.length; i++) {	        try {	            console.log(eval(arr[i]));	        } catch (e) {	            console.log("Invalid");	        }	    }	</script>
+11:44:12 From  Eric Heilig  to  Everyone:
+	<script>	    var date = new Date("Thu Jan 29 2009 17:31:44");	    var now = new Date("2019-01-24 18:31:44");		    console.log(now.getMonth() === date.getMonth());	</script>
+11:44:36 From  Franz Cordes-Eklund  to  Everyone:
+	nice
+11:44:38 From  Jessica Fatim  to  Everyone:
+	nice
+11:45:11 From  Esmond Kim  to  Everyone:
+	Good luck Eric!  It will be the last place you expect to find it.
+11:45:48 From  Don Buckley  to  Everyone:
+	Lunch break until 1:00 pm
