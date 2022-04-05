@@ -1,10 +1,21 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <jsp:include page="../include/header.jsp"/>
-<h1 class="text-center m-5">Registration</h1>
+
+<!-- Rewrite this as a case stmt using c:choose -->
+<c:if test="${empty form.id}">
+    <h1 class="text-center m-5">Sign Up</h1>
+</c:if>
+
+<c:if test="${not empty form.id}">
+    <h1 class="text-center m-5">Edit User</h1>
+</c:if>
+
 <form action="/user/registerSubmit" method="post">
     <input type="hidden" name="id" value="${form.id}">
     <div class="mb-3 mt-3">
         <label for="emailId" class="form-label">Email:</label>
-        <input type="email" class="form-control" id="emailId" placeholder="Enter email" name="email" value="${form.email}">
+        <input type="text" class="form-control" id="emailId" placeholder="Enter email" name="email" value="${form.email}">
         <p class="hiddenMsg"></p>
     </div>
     <div class="mb-3">

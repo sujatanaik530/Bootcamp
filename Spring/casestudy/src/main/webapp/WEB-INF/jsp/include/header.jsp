@@ -14,4 +14,4 @@
     </style>
 </head>
 <body>
-<a href="/index">Index</a>&nbsp|&nbsp<a href="/user/register">Register</a><hr>
+<a href="/index">Index</a>&nbsp|&nbsp<a href="/user/register">Register</a>&nbsp|&nbsp<a href="/user/search">Search</a><hr>
