@@ -15,7 +15,7 @@ eres = document.getElementById("eres");
 eres.innerHTML = result;
 eres.innerHTML += "<br>" + eval("x*y");*/
 
-      /*
+ /*     
 var x = function() {
     if (i!=5) {
         return true;
@@ -24,19 +24,18 @@ var x = function() {
         return false;
     }
 }
-console.log(x);
-*/
+console.log(x);*/
 
-      /*
+/*      
 if ("10" !== 10) {
-    console.log("not equal");
+    console.log("not same type");
 }
 else {
-    console.log("equal");
+    console.log("same type");
 }
 */
 
-      /*
+/*      
 var a = "a";
 var a = "b";
 console.log(a);
@@ -61,6 +60,20 @@ console.log(n);
         return x%5;
     }));
 */
+
+/*
+var arr = [1, 2, 3, 4, 5,];
+arr.forEach(function (value, index) {
+    arr[index] = value * value;
+});
+
+console.log("arr " + arr);
+console.log(arr.reverse().filter(function(x) {
+    return x%5;
+}));
+console.log("arr " + arr); // reversed, all squares (not changed by filter)
+*/
+
 /*
 var arr = [1, 2, 3, 4, 5, ];
 arr.forEach(function(value, index, array) {
@@ -95,7 +108,9 @@ for (var i in person) {
             console.log("Invalid");
         }
     }
-    */
+*/    
+
+    //for(var i = 0; i < 10 ; i++ ) ; {console.log(i) } //prints 10
 
     /*
     var date = new Date("Thu Jan 29 2009 17:31:44");
@@ -103,11 +118,11 @@ for (var i in person) {
 
     console.log(now.getMonth() === date.getMonth());*/
 
-    var data = "1+2, 2+3, 3+4, 4+5, 5 + 1 ".split(/\s*,\s*/).reverse();
+    //var data = "1+2, 2+3, 3+4, 4+5, 5 + 1 ".split(/\s*,\s*/).reverse();
     
-/*    console.log(data);
+    /*console.log(data);
     console.log(data[1]);
-    console.log(data[1][0] + data[1][2]);
+    console.log(data[1][0] + data[1][2]);*/
 
     console.log("Adding two non-numerical strings -> concatenating")
     console.log("2ab"+"2ab");
@@ -140,7 +155,44 @@ for (var i in person) {
     console.log("Multiplying two numbers")
     console.log(8*7);
     console.log("Dividing two numbers")
-    console.log(8/7);*/
+    console.log(8/7);
+
+    /*numbers = "12345";
+    for (var i =0; i < 5; i++) {
+        if (numbers[i] == 3) {
+            break;
+        }
+        console.log(numbers[i]);
+    }*/
+
+//    var data ="1+2, 2+3, a+b".split(/\s*,\s*/).reverse();
+  //  console.log(data);
+    //console.log(data[1][0]+data[0][2]); //Result 2b
+
+    //eval("alert(\"hello!\")");
+
+    /*person = {
+        first_name: "Luke",
+        last_name: "Lance",
+        age: 23
+    }
+    console.log(Object.values(person));
+    printprops(person);
+    function printprops(p) {
+        for (var o in p) {
+            console.log(o + ": " + p[o] + "\n");
+        }
+    }*/
+
+ /*   const arr1 = ['a', 'b', 'c'];
+const arr2 = ['b', 'c', 'a'];
+
+console.log(
+  arr1.sort() === arr1,
+  arr2.sort() == arr2,
+  arr1.sort() === arr2.sort()
+);*/
+
 
     </script>
 <!-- var data = "1+2, 2+3, 3+4, 4+5, 5+1".split(/\s*,\s*/).reverse();-->

@@ -9,6 +9,8 @@ import lombok.ToString;
 @ToString
 public class RegisterFormBean {
     // These names must match the names in the form.
+    // This id will be null in case of "create". It will be populated with the userid in case of "edit".
+    private Integer id;
     private String email;
     private String firstName;
     private String lastName;

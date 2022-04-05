@@ -11,6 +11,8 @@ import java.util.List;
 @Repository
 public interface UserDAO extends JpaRepository<User, Long> {
 
+    public User findById(@Param("id") Integer id);
+
     public List<User> findByEmail(@Param("email") String email);
 
     // select * from user where upper(first_name) like '%A%';
