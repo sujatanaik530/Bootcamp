@@ -4,10 +4,19 @@
 
 <h1 class="text-center m-5">Search</h1>
 
-<!-- change below line for use without searchformbean ...url to /user/search and method to get -->
-<form action="/user/searchSubmit" method="post">
-    <input class="form-control" type="text" name="search" id="search" value="${form.search}"></input>
-    <button class="btn btn-primary" type="submit">Search by first name</button>
+<!-- <form action="/user/searchSubmit" method="post"> -->
+<form action="/user/searchNoBean" method="get">
+    <div class="row">
+        <div class="col-md-2">
+            <label for="search">First name:</label>
+        </div>
+        <div class="col-md-8">
+            <input class="form-control" type="text" name="search" id="search" value="${form.search}"></input>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </div>
 </form>
 <br><br>
 <table class="table table-sm" style="width:60%;margin:auto">
@@ -17,6 +26,7 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th>User Since</th>
+        <th>Edit</th>
     </tr>
 <c:forEach items="${user}" var="user">
     <tr>
@@ -25,6 +35,7 @@
         <td>${user.firstName}</td>
         <td>${user.lastName}</td>
         <td>${user.createDate}</td>
+        <th><a href="/user/edit/${user.id}">Edit</a></th>
     </tr>
 </c:forEach>
 </table>

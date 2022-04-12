@@ -3,15 +3,19 @@ package teksystems.casestudy.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import teksystems.casestudy.database.dao.UserDAO;
+import teksystems.casestudy.database.dao.UserRoleDAO;
 import teksystems.casestudy.database.entity.User;
+import teksystems.casestudy.database.entity.UserRole;
 import teksystems.casestudy.formbean.RegisterFormBean;
 import teksystems.casestudy.formbean.SearchFormBean;
 
@@ -23,14 +27,23 @@ import java.util.List;
 
 @Slf4j
 @Controller
+@PreAuthorize("hasAnyAuthority('ADMIN', 'USER')") // class level, can also be method level
 public class UserController {
     @Autowired
     private UserDAO userDao;
     // Ignore the warning on @Autowired
 
-    /*
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserRoleDAO userRoleDao;
+
+    /**
+     *
      This is the controller method for the entry point of the user registration form.
      It does not do anything other than provide a route to register.jsp.
+     *
      */
     @RequestMapping (value = "/user/register", method = RequestMethod.GET)
     public ModelAndView register() throws Exception {
@@ -49,29 +62,43 @@ public class UserController {
 
     /**
      *
-     *
      * This method becomes a "create" and an "edit" based on if the "id" is populated in the RegisterFormBean.
+     *
      */
     //public ModelAndView registerSubmit(@RequestParam("email") String email) throws Exception {
     //public ModelAndView registerSubmit() throws Exception {
-    @RequestMapping (value = "/user/registerSubmit", method = RequestMethod.POST) /* This is the URL part after localhost:8080. */
+    @RequestMapping (value = "/user/registerSubmit", method = {RequestMethod.POST, RequestMethod.GET}) /* This is the URL part after localhost:8080. */
     public ModelAndView registerSubmit(@Valid RegisterFormBean form, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
 
+        //int i = 10 / 0; // to test ErrorController
+
         if (bindingResult.hasErrors()) {
             //HashMap errors = new HashMap();
+
+            List<String> errorMessages = new ArrayList<>();
+
             for (ObjectError error: bindingResult.getAllErrors()) {
                 //errors.put(((FieldError) error).getField(), error.getDefaultMessage());
+
+                errorMessages.add(error.getDefaultMessage());
                 log.info(((FieldError) error).getField() + " " + error.getDefaultMessage());
             }
+
+            // add form back to model,so we can fill up the input fields
+            // so the user can correct the input and does not have to type it all again
+            response.addObject("form", form);
+            response.addObject("bindingResult", bindingResult);
+            response.addObject("errorMessages", errorMessages);
 
             // add the errors to the response object
             //response.addObject("formErrors", errors);
 
             // Because there is/are error/errors, we do not want to process the logic below.
             // That will create a new  user in the db.
-            // We want to shoe register.jsp.
-            response.setViewName("redirect:/user/register");
+            // We want to show register.jsp.
+            //response.setViewName("redirect:/user/register");
+            response.setViewName("user/register");
             return response;
         }
 
@@ -88,10 +115,18 @@ public class UserController {
         user.setEmail(form.getEmail());
         user.setFirstName(form.getFirstName());
         user.setLastName(form.getLastName());
-        user.setPassword(form.getPassword());
+
+        user.setPassword(passwordEncoder.encode(form.getPassword()));
+
         //user.setCreateDate(new Date());
 
         userDao.save(user);
+
+        UserRole userRole = new UserRole();
+        userRole.setUserId(user.getId());
+        userRole.setUserRole("USER");
+
+        userRoleDao.save(userRole);
 
         // form -> form bean -> database
 
@@ -142,14 +177,20 @@ public class UserController {
     // add error checking to make sure that the incoming search value is not null and is not empty.
     // find apache string utils on maven central and add it to your pom file - very high recommendation
     // research the StringUtils.isEmpty function and use for error checking
-    //@GetMapping (value="/user/search")
+
+    // uncomment below block to use without form bean. also comment the two functions - search and searchSubmit
+    // that follow.
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping (value="/user/searchNoBean")
     public ModelAndView searchNoBean(@RequestParam(required=false, name="search") String search) throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("/user/search");
+        response.setViewName("user/search");
 
-        // the below code is for using with @requestparam
+        List<User> users = new ArrayList<>();
+
         if (!StringUtils.isBlank(search)) {
-            List<User> users = userDao.findByFirstNameIgnoreCaseContaining(search);
+            users = userDao.findByFirstNameIgnoreCaseContaining(search);
             response.addObject("user", users);
         }
         else {
@@ -157,33 +198,30 @@ public class UserController {
         }
 
         response.addObject("search", search);
-
+        log.info("In searchNoBean");
         return response;
     }
 
-    @RequestMapping(value = "/user/search", method = RequestMethod.GET)
+    @GetMapping(value = "/user/search")
     public ModelAndView search() throws Exception {
         ModelAndView response = new ModelAndView();
         response.setViewName("user/search");
 
-        // this seeds the model with an empty form bean. this is needed by the jsp page
-        // since it references the fields there.
         SearchFormBean form = new SearchFormBean();
         response.addObject("form", form);
 
         return response;
     }
 
-    @RequestMapping(value = "/user/searchSubmit", method = RequestMethod.POST)
+    @PostMapping(value = "/user/searchSubmit")
     public ModelAndView searchSubmit(@Valid SearchFormBean form, BindingResult bindingResult) throws Exception {
 
         ModelAndView response = new ModelAndView();
         response.setViewName("user/search");
+        log.info("In searchSubmit");
 
-        // error checking, uses @Valid, form bean
         if(bindingResult.hasErrors()) {
             log.info("Errors in the form");
-            response.setViewName("user/search");
             return response;
         }
 
