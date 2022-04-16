@@ -24,6 +24,7 @@
         <a href="/login/login" title="Login"><i class="fa-solid fa-arrow-right-to-bracket"></i>&nbsp;&nbsp;Login</a> &nbsp; | &nbsp;
     </sec:authorize>
     <a href="/index">Index</a> &nbsp; | &nbsp;
+    <a href="/upload">Upload</a> &nbsp; | &nbsp;
     <a href="/ajax">AJAX Example</a> &nbsp; | &nbsp;
     <a href="/user/register">Sign Up</a> &nbsp; | &nbsp;
     <sec:authorize access="hasAuthority('ADMIN')">
